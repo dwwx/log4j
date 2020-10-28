@@ -64,11 +64,13 @@ public class AsyncAppender extends AppenderSkeleton
    * Event buffer, also used as monitor to protect itself and
    * discardMap from simulatenous modifications.
    */
+  //buffer中存的是LoggingEvent
   private final List buffer = new ArrayList();
 
   /**
    * Map of DiscardSummary objects keyed by logger name.
    */
+  //<String, DiscardSummary> == <loggerName, DiscardSummary>
   private final Map discardMap = new HashMap();
 
   /**
@@ -525,7 +527,6 @@ public class AsyncAppender extends AppenderSkeleton
      */
     public void run() {
       boolean isActive = true;
-
       //
       //   if interrupted (unlikely), end thread
       //
@@ -535,7 +536,6 @@ public class AsyncAppender extends AppenderSkeleton
         //
         while (isActive) {
           LoggingEvent[] events = null;
-
           //
           //   extract pending events while synchronized
           //       on buffer

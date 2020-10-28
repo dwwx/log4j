@@ -62,6 +62,7 @@ import org.apache.log4j.spi.ThrowableRenderer;
 
    @author Ceki G&uuml;lc&uuml;
 
+   Hierarchy
 */
 public class Hierarchy implements LoggerRepository, RendererSupport, ThrowableRendererSupport {
 

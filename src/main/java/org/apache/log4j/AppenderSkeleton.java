@@ -248,7 +248,7 @@ public abstract class AppenderSkeleton implements Appender, OptionHandler {
       case Filter.NEUTRAL: f = f.getNext();
       }
     }
-    
+    //子类重写的方法，多态的使用
     this.append(event);    
   }
 
